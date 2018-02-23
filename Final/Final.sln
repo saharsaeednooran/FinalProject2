@@ -5,7 +5,7 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CanFood", "CanFood\CanFood.csproj", "{13784F74-3D2A-46EF-85D5-CDEC244F9BE7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CanFood.Tests", "CanFood.Tests\CanFood.Tests.csproj", "{A4E9F5E4-47BE-4244-8CD5-5E249DC3C27B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CanFoodTests", "CanFoodTests\CanFoodTests.csproj", "{044654F2-475E-400B-B152-D9C830AC05A0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{13784F74-3D2A-46EF-85D5-CDEC244F9BE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{13784F74-3D2A-46EF-85D5-CDEC244F9BE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{13784F74-3D2A-46EF-85D5-CDEC244F9BE7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A4E9F5E4-47BE-4244-8CD5-5E249DC3C27B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A4E9F5E4-47BE-4244-8CD5-5E249DC3C27B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A4E9F5E4-47BE-4244-8CD5-5E249DC3C27B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A4E9F5E4-47BE-4244-8CD5-5E249DC3C27B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{044654F2-475E-400B-B152-D9C830AC05A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{044654F2-475E-400B-B152-D9C830AC05A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{044654F2-475E-400B-B152-D9C830AC05A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{044654F2-475E-400B-B152-D9C830AC05A0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

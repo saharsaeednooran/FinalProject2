@@ -1,0 +1,16 @@
+﻿@***************************************************************************
+    Author: Sahar Saeednooran
+    Class: readText.cshtml 
+    Purpose: Razor view page to view Array of srings
+             no special style applied as this is not going to be used later
+    Last Modified: Feb 18th, 2018
+    **************************************************************************@
+@{
+    ViewBag.Title = "readText";
+}
+@{
+    foreach (string row in Model) // Reading each row in the Array
+    {
+        <p>@row</p>
+    }
+}

@@ -1,14 +1,25 @@
-﻿<!DOCTYPE html>
+﻿@***************************************************************************
+    Author: Sahar Saeednooran
+    Class: _Layout.cshtml
+
+    Purpose: work in progress ...
+             Razor view page the general Layout of CANFOOD Application
+             other Razor pages get rendered inside this layout to preseve a unit theme
+    Last Modified: Feb 18th, 2018
+    **************************************************************************@
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title CANFOOD</title>
+    <link runat="server" rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link runat="server" rel="icon" href="favicon.ico" type="image/ico" />
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-
 </head>
 <body>
+
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -17,26 +28,29 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("CANAD FOOD STATISTICS", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("CANFOOD", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("Load Data", "LoadData", "Home")</li>
+                    <li>@Html.ActionLink("read CSV API", "Reload", "Food")</li>
+                    <li>@Html.ActionLink("read CSV IO", "readText", "Food")</li>
                 </ul>
             </div>
         </div>
     </div>
+    <img src="~/Canada.png" alt="CanFood" width="150" height="150">
+
     <div class="container body-content">
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy;Hi Sahar Saeednooran @DateTime.Now</p>
+            <p>
+                <h4>&copy;CANFOOD by: Sahar Saeednooran</h4>
+                <h5>CST8333-350-@DateTime.Now.Year</h5>
+            </p>
         </footer>
     </div>
-
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)

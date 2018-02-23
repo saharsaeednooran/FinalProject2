@@ -12,6 +12,6 @@ namespace CanFood.Models
         {
 
         }
-        public DbSet<FoodModel> Foods { get; set; }
+        public DbSet<Food> Foods { get; set; }
     }
 }
