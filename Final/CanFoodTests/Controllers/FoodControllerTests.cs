@@ -28,8 +28,10 @@ namespace CanFood.Controllers.Tests
         public void IndexTest()
         {
             FoodController foodController = new FoodController();
-            var IndexActionResult = foodController.Index() as ViewResult;
-            Assert.AreSame(foodController.ViewData, IndexActionResult.ViewData);
+            ActionResult IndexActionResult = foodController.Index();
+            Assert.AreNotSame(IndexActionResult, foodController.Index());
+            Assert.AreEqual(IndexActionResult, foodController.Index());
+
         }
     }
 }
