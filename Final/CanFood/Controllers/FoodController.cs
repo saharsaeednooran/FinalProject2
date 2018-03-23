@@ -30,15 +30,15 @@ namespace CanFood.Controllers
         /// </summary>
         /// <param name="id">Optional, number of records to read from CSV; defult value = 100</param>
         /// <returns>Releaod View page </returns>
-        public ActionResult Reload(int? id)
-        {
-            // number of records to read from CSV and show on view page
-            int maxRecord = 100;
-            if (id.HasValue) maxRecord = (int)id;
-            // List of Food records 
-            List<Food> results = CSVManager.ReadInCSV(maxRecord);
-            return View(results);
-        }
+       //// public ActionResult Reload(int? id)
+       // {
+            //// number of records to read from CSV and show on view page
+            //int maxRecord = 100;
+            //if (id.HasValue) maxRecord = (int)id;
+            //// List of Food records 
+            //List<SuperFood> results = CSVManager.ReadInCSV(maxRecord);
+            //return View(results);
+     //   }
         /// <summary>
         /// Reads data from CSV and passes an Array of strings to readText view page 
         /// </summary>
@@ -114,7 +114,7 @@ namespace CanFood.Controllers
         /// <returns></returns>
         public ActionResult Edit(int id)
         {
-            return View();
+            return View(id);
         }
         /// <summary>
         /// work in progress ...

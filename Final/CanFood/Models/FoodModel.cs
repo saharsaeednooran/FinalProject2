@@ -15,10 +15,7 @@ using System.Web.Hosting;
 
 namespace CanFood.Models
 {
-/// <summary>
-/// Implementation of Food object acording to csv columns 
-/// </summary>
-    public class Food
+    public class SuperFood
     {
         /// <summary>
         /// Gets and Sets MonthYear
@@ -45,7 +42,58 @@ namespace CanFood.Models
         /// <summary>
         /// gets and sets Value for the food record 
         /// </summary>
-        public string Value { get; set; }
+        public string ValueString { get; set; }
+    }
+
+    /// <summary>
+    /// Implementation of Food object acording to csv columns 
+    /// </summary>
+    public class Food
+    {
+        /// <summary>
+        /// ID for database
+        /// </summary>
+        public int ID { get; set;  }
+        /// <summary>
+        /// Gets and Sets MonthYear
+        /// </summary>
+        public string MonthYear { get; set; }
+        /// <summary>
+        /// Gets and Sets Region
+        /// </summary>
+        public string Region { get; set; }
+        /// <summary>
+        /// Gets and Sets food Category
+        /// </summary>
+        public string Category { get; set; }
+        /// <summary>
+        /// gets and sets cordinate vector, 
+        /// this has not been used in this application, needs refactoring later
+        /// </summary>
+        public string vec1 { get; set; }
+        /// <summary>
+        /// gets and sets vector value, 
+        /// this has not been used in this application, needs refactoring later
+        /// </summary>
+        public string vec2 { get; set; }
+        public double Value { get; set; }
+        public Food() { }
+        public Food(SuperFood superFood)
+        {
+            MonthYear = superFood.MonthYear;
+            vec1 = superFood.vec1;
+            vec2 = superFood.vec2;
+            Region = superFood.Region;
+            Category = superFood.Category;
+            try
+            {
+                Value = Convert.ToDouble(superFood.ValueString);
+            }
+            catch
+            {
+                Value = 0;
+            }
+        }
     }
 
     /// <summary>
@@ -58,20 +106,18 @@ namespace CanFood.Models
         /// </summary>
         /// <param name="maxRecords">number of record to read from csv</param>
         /// <returns>list of food objects</returns>
-        public static List<Food> ReadInCSV(int maxRecords)
+        public static List<SuperFood> ReadInCSV()
         {
-            List<Food> results = new List<Food>();
+            List<SuperFood> results = new List<SuperFood>();
             // TODO: don use hard code path
             string path = HostingEnvironment.MapPath("~/App_Data/03290040-eng.csv");
             // TODO: exception handling 
             TextReader fileReader = File.OpenText(path);
             var csv = new CsvReader(fileReader);
             csv.Configuration.HasHeaderRecord = false;
-            int i = 0;
-            while (csv.Read() & i < maxRecords)
+            while (csv.Read())
             {
-                i++;
-                Food f = csv.GetRecord<Food>();
+                SuperFood f = csv.GetRecord<SuperFood>();
                 results.Add(f);
             }
             return results;
