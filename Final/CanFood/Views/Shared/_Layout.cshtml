@@ -38,20 +38,27 @@
                     <li>@Html.ActionLink("Read Food", "Reload", "Foods")</li>
 
                 </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sahar Saeednooran</a></li>
+                </ul>
+
             </div>
         </div>
     </div>
-    <img src="~/Canada.png" alt="CanFood" width="150" height="150">
+    <img src="~/VOD.jpg" alt="CanFood" width="1300" height="150">
 
     <div class="container body-content">
         @RenderBody()
         <hr />
-        <footer>
-            <p>
-                <h4>&copy;CANFOOD by: Sahar Saeednooran</h4>
-                <h5>CST8333-350-@DateTime.Now.Year</h5>
-            </p>
-        </footer>
+        <div class="navbar navbar-default navbar-fixed-bottom">
+            <div class="container">
+                <p class="navbar-text pull-left">
+                    © CST8333-350-@DateTime.Now.Year - Site Built By Sahar Saeednooran
+                </p>
+            </div>
+
+
+        </div>
     </div>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
